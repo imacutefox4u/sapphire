@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: "Comic Sans MS", sans-serif;
-            background-color: #000033; /* Dark navy blue */
+            background-color: #000033;
             color: #ffcc00;
             text-align: center;
             padding: 10px;
@@ -53,6 +53,33 @@
             background-color: #00ff00;
             color: #ff0000;
         }
+        /* Popup styling */
+        .popup {
+            position: fixed;
+            width: 300px;
+            height: 200px;
+            background-color: #ffff00;
+            color: #ff0000;
+            border: 3px solid #ff00ff;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 1.5em;
+            z-index: 10;
+            box-shadow: 0 0 20px #00ff00;
+        }
+        .popup .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff0000;
+            color: #ffff00;
+            border: none;
+            font-size: 1.2em;
+            padding: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -74,5 +101,38 @@
     <h2 class="flashing-text">!!! SHE LOVES YOU !!!</h2>
 
     <p style="font-size: 1.2em; color: #ff00ff; text-shadow: 1px 1px #00ff00;">Disclaimer: Only true Sapphire fans may enter!</p>
+
+    <!-- Popup template -->
+    <div id="popup" class="popup" style="display: none;">
+        <button class="close-btn" onclick="closePopup()">X</button>
+        <p>🎉 Congratulations! 🎉</p>
+        <p>You are the 1,000,000th visitor!</p>
+        <p>Click to claim your prize!</p>
+    </div>
+
+    <script>
+        // Show the initial popup
+        let popupCount = 1;
+        function showPopup() {
+            for (let i = 0; i < popupCount; i++) {
+                let popup = document.getElementById("popup").cloneNode(true);
+                popup.style.display = "block";
+                popup.style.top = `${Math.random() * 80 + 10}%`;
+                popup.style.left = `${Math.random() * 80 + 10}%`;
+                document.body.appendChild(popup);
+            }
+        }
+        
+        // Close a popup and create two more
+        function closePopup() {
+            let popups = document.querySelectorAll('.popup');
+            popups.forEach(popup => popup.remove());
+            popupCount *= 2;
+            showPopup();
+        }
+        
+        // Show the initial popup on page load
+        window.onload = showPopup;
+    </script>
 </body>
 </html>
