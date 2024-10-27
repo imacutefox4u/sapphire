@@ -11,22 +11,30 @@
             color: #ffcc00;
             text-align: center;
             padding: 10px;
+            image-rendering: pixelated;
         }
         h1, h2, p {
             text-shadow: 2px 2px #ff0000;
+            font-size: 2em;
+            image-rendering: pixelated;
         }
         .flashing-text {
             animation: flash 0.5s infinite alternate;
         }
         @keyframes flash {
             from { color: #ffcc00; }
-            to { color: #00ff00; }
+            to { color: #ff00ff; }
         }
         .marquee {
             font-size: 2em;
             background-color: #ff00ff;
             color: #ffff00;
             padding: 5px;
+            animation: flash-bg 0.5s infinite alternate;
+        }
+        @keyframes flash-bg {
+            from { background-color: #ff00ff; }
+            to { background-color: #00ff00; }
         }
         .click-here {
             font-size: 1.5em;
@@ -34,6 +42,11 @@
             text-decoration: underline;
             font-weight: bold;
             cursor: pointer;
+            animation: flash-text 0.5s infinite alternate;
+        }
+        @keyframes flash-text {
+            from { color: #ff00ff; }
+            to { color: #00ff00; }
         }
         .buttons {
             margin: 20px;
@@ -42,7 +55,7 @@
             background-color: #ff0000;
             color: #ffff00;
             padding: 10px 20px;
-            font-size: 1.2em;
+            font-size: 1.5em;
             margin: 5px;
             border-radius: 5px;
             box-shadow: 0px 0px 10px #ff00ff;
@@ -68,6 +81,7 @@
             font-size: 1.5em;
             z-index: 10;
             box-shadow: 0 0 20px #00ff00;
+            animation: flash 0.3s infinite alternate;
         }
         .popup .close-btn {
             position: absolute;
@@ -86,7 +100,7 @@
     <h1 class="flashing-text">WELCOME TO SAPPHIRE'S PAGE!</h1>
     <div class="marquee">!!! MEET SAPPHIRE THE GERMAN SHEPHERD !!!</div>
 
-    <img src="sapphire.jpg" alt="Sapphire the German Shepherd" width="200" height="200">
+    <img src="sapphire.jpg" alt="Sapphire the German Shepherd" width="250" height="250" style="image-rendering: pixelated;">
     
     <h2>!! ABOUT SAPPHIRE !!</h2>
     <p class="flashing-text">Sapphire is the best German Shepherd EVER! She loves you! Click below to learn all her secrets!!</p>
@@ -111,8 +125,9 @@
     </div>
 
     <script>
-        // Show the initial popup
         let popupCount = 1;
+        
+        // Function to show multiple popups
         function showPopup() {
             for (let i = 0; i < popupCount; i++) {
                 let popup = document.getElementById("popup").cloneNode(true);
@@ -123,7 +138,7 @@
             }
         }
         
-        // Close a popup and create two more
+        // Close a popup and multiply
         function closePopup() {
             let popups = document.querySelectorAll('.popup');
             popups.forEach(popup => popup.remove());
@@ -131,7 +146,6 @@
             showPopup();
         }
         
-        // Show the initial popup on page load
         window.onload = showPopup;
     </script>
 </body>
