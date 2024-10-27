@@ -3,62 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Sapphire</title>
+    <title>!!!ABOUT SAPPHIRE!!!</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #1a2a3a; /* Dark navy blue */
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-        }
-        .header {
+            font-family: "Comic Sans MS", sans-serif;
+            background-color: #000033; /* Dark navy blue */
+            color: #ffcc00;
             text-align: center;
-            padding: 20px;
-            border-bottom: 2px solid #1e5f8b;
+            padding: 10px;
         }
-        .header h1 {
-            font-size: 2.5em;
-            color: #8bbfce; /* Light blue accent color */
+        h1, h2, p {
+            text-shadow: 2px 2px #ff0000;
         }
-        .profile-pic {
-            display: block;
-            margin: 20px auto;
-            border-radius: 50%;
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border: 3px solid #8bbfce;
+        .flashing-text {
+            animation: flash 0.5s infinite alternate;
         }
-        .about {
-            text-align: center;
-            padding: 20px;
+        @keyframes flash {
+            from { color: #ffcc00; }
+            to { color: #00ff00; }
         }
-        .about h2 {
+        .marquee {
             font-size: 2em;
-            color: #8bbfce;
+            background-color: #ff00ff;
+            color: #ffff00;
+            padding: 5px;
         }
-        .about p {
+        .click-here {
+            font-size: 1.5em;
+            color: #00ff00;
+            text-decoration: underline;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .buttons {
+            margin: 20px;
+        }
+        .button {
+            background-color: #ff0000;
+            color: #ffff00;
+            padding: 10px 20px;
             font-size: 1.2em;
-            line-height: 1.6;
+            margin: 5px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px #ff00ff;
+            border: 3px solid #00ff00;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #00ff00;
+            color: #ff0000;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Meet Sapphire</h1>
-        </div>
-        <img src="sapphire.jpg" alt="Sapphire the German Shepherd" class="profile-pic">
-        <div class="about">
-            <h2>About Sapphire</h2>
-            <p>Sapphire is a beautiful German Shepherd with a heart of gold and boundless energy! She loves going for walks, playing fetch, and exploring new trails. Sapphire is also a loyal friend and loves to spend time with her family, always ready to lend a paw or a cuddle.</p>
-        </div>
+    <h1 class="flashing-text">WELCOME TO SAPPHIRE'S PAGE!</h1>
+    <div class="marquee">!!! MEET SAPPHIRE THE GERMAN SHEPHERD !!!</div>
+
+    <img src="sapphire.jpg" alt="Sapphire the German Shepherd" width="200" height="200">
+    
+    <h2>!! ABOUT SAPPHIRE !!</h2>
+    <p class="flashing-text">Sapphire is the best German Shepherd EVER! She loves you! Click below to learn all her secrets!!</p>
+
+    <div class="buttons">
+        <a href="#" class="button">CLICK HERE FOR SAPPHIRE'S SECRETS!</a>
+        <a href="#" class="button">FIND OUT MORE ABOUT SAPPHIRE!</a>
     </div>
+
+    <p class="click-here">CLICK HERE TO WIN A WALK WITH SAPPHIRE!!!</p>
+
+    <h2 class="flashing-text">!!! SHE LOVES YOU !!!</h2>
+
+    <p style="font-size: 1.2em; color: #ff00ff; text-shadow: 1px 1px #00ff00;">Disclaimer: Only true Sapphire fans may enter!</p>
 </body>
 </html>
